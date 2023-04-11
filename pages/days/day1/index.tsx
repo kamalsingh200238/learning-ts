@@ -20,10 +20,22 @@ export default function Day1() {
   console.log({firstPerson, secondPerson})
 
   console.log(
-    firstPerson.talk(),
-    secondPerson.talk(),
-    secondPerson.fly(),
+    "First Person Talk", firstPerson.talk(),
+    "Second Person Talk", secondPerson.talk(),
+    "Second Person Fly", secondPerson.fly(),    
   )
+
+  // check if the protoype on class is equal to variable.__propto__ (spolier: it is true)
+  console.log(firstPerson.__proto__ === Human.prototype)
+
+  // add a function to class
+  Human.prototype.walk = function () {
+    return "walking.."
+  }
+
+  // try that function
+  console.log(firstPerson.walk())
+
   return (
     <>
       <Head>
